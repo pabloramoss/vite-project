@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
-function CountdownTimer({ targetDate }) {
+interface Props {
+  targetDate: Date;
+}
+
+const CountdownTimer: React.FC<Props> = ({ targetDate }) => {
   const [timeRemaining, setTimeRemaining] = useState({
     days: 0,
     hours: 0,
@@ -11,7 +15,7 @@ function CountdownTimer({ targetDate }) {
   useEffect(() => {
     const intervalId = setInterval(() => {
       const currentDate = new Date();
-      const timeDifference = targetDate - currentDate;
+      const timeDifference: number = +targetDate - +currentDate
 
       if (timeDifference < 0) {
         clearInterval(intervalId);
