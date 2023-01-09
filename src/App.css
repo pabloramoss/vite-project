@@ -46,17 +46,12 @@
 }
 
 p {
-  color: white;
   font-weight: 800;
   font-size: 100px;
+  color: grey;
 }
 
 .app {
   justify-content: center;
   align-items: center;
-}
-
-h1 {
-  font-size: 600px;
-  font-weight: 800;
 }

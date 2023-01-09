@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { formatNumber } from '../utils';
 
 interface Props {
   targetDate: Date;
@@ -40,8 +41,8 @@ const CountdownTimer: React.FC<Props> = ({ targetDate }) => {
       <p>{timeRemaining.days} days</p>
       <div className='hour-container'>
         <p>{timeRemaining.hours}:</p>
-        <p>{timeRemaining.minutes}:</p>
-        <p>{timeRemaining.seconds}</p>
+        <p>{formatNumber(timeRemaining.minutes)}:</p>
+        <p>{formatNumber(timeRemaining.seconds)}</p>
       </div>
     </div>
   );
