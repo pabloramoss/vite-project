@@ -16,12 +16,7 @@ const CountdownTimer: React.FC<Props> = ({ targetDate }) => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       const currentDate = new Date();
-      const timeDifference: number = +targetDate - +currentDate
-
-      if (timeDifference < 0) {
-        clearInterval(intervalId);
-        return;
-      }
+      const timeDifference: number = +currentDate - +targetDate;
 
       const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
       const hours = Math.floor(
